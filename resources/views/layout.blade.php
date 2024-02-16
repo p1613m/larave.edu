@@ -14,7 +14,7 @@
     <a href="{{ route('home')  }}">Home</a>
 
     @auth
-        <a href="#">Create post</a>
+        <a href="{{ route('posts.create') }}">Create post</a>
         <a href="{{ route('logout') }}">Logout</a>
     @endauth
 

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Blog</h1>
+    <h1>Posts by {{ $user->username }}</h1>
 
     @foreach($posts as $post)
         @php
@@ -16,6 +16,6 @@
     @endforeach
 
     @for($i = 1; $i <= ceil($posts->total() / $posts->perPage()); $i++)
-        <a href="{{ route('home', ['page' => $i]) }}"> {{ $i }}</a>
+        <a href="{{ route('user.posts', ['user' => $user, 'page' => $i]) }}"> {{ $i }}</a>
     @endfor
 @endsection
